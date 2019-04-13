@@ -1,3 +1,9 @@
+# ssh
+export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# User/local binaries in the PATH
+export PATH=~/.local/bin:$PATH
+
 # Disables command history sharing between terminals
 unsetopt share_history
 
