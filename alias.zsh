@@ -9,6 +9,7 @@ alias config-env="$SHCONFIG_EDITOR $SHCONFIG_PATH/env.zsh"
 alias config-sensitive="$SHCONFIG_EDITOR $SHCONFIG_PATH/sensitive.zsh"
 alias config-alias="$SHCONFIG_EDITOR $SHCONFIG_PATH/alias.zsh"
 alias config-functions="$SHCONFIG_EDITOR $SHCONFIG_PATH/functions.zsh"
+alias config-homestead="$SHCONFIG_EDITOR $HOME/Personal/Homestead/Homestead.yaml"
 
 # Remapped commands
 alias ls="ls -l --color"
@@ -19,3 +20,9 @@ alias rcat="/bin/cat"
 # Additional alias for `debian` oh-my-zsh plugin
 alias ali="grep \" install \" /var/log/dpkg.log"    # List installed packages
 alias ass="apt show"
+
+# Express VPN
+alias evpn="expressvpn"
+alias evpns="expressvpn status"
+alias evpnc="expressvpn connect"
+alias evpnd="expressvpn disconnect"

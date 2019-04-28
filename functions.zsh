@@ -50,3 +50,8 @@ function gpdict()
     logstore "$1" gpdict.log
     xdg-open https://dict.leo.org/alemão-português/$1
 }
+
+function homestead()
+{
+    (cd $HOME/Personal/Homestead && vagrant $*)
+}
