@@ -15,12 +15,11 @@ Framework-like structure for organizing different shell configurations. Optimize
   - `SHCONFIG_PATH`: The folder that holds the files from this repo
   - `SHSTORAGE_PATH`: The folder for storing logs and other info (used in functions.zsh)
 
-
 4. After that, include the line for sourcing the `boot.zsh` file, in your `.zshrc` file:
 `source $SHCONFIG_PATH/boot.zsh`
 
 ### Required packages (for default configuration)
-```git neofetch bat```
+```git neofetch bat trash-cli```
 
 ### Required plugins (from Oh My Zsh)
 ```git quote copyfile ```

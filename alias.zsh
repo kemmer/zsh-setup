@@ -26,3 +26,7 @@ alias evpn="expressvpn"
 alias evpns="expressvpn status"
 alias evpnc="expressvpn connect"
 alias evpnd="expressvpn disconnect"
+
+# trash-cli (Ubuntu)
+alias tf="trash"
+alias tl="trash-list"
