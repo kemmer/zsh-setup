@@ -1,8 +1,9 @@
 # Alias for changing common settings
-alias config-zsh="$SHCONFIG_EDITOR ~/.zshrc"
-alias config-ohmyzsh="$SHCONFIG_EDITOR ~/.oh-my-zsh"
-alias config-neofetch="$SHCONFIG_EDITOR ~/.config/neofetch/config.conf"
-alias config-gitglobal="$SHCONFIG_EDITOR ~/.gitconfig"
+alias config-zsh="$SHCONFIG_EDITOR $HOME/.zshrc"
+alias config-ohmyzsh="$SHCONFIG_EDITOR $HOME/.oh-my-zsh"
+alias config-neofetch="$SHCONFIG_EDITOR $HOME/.config/neofetch/config.conf"
+alias config-gitglobal="$SHCONFIG_EDITOR $HOME/.gitconfig"
+alias config-hosts="sudo $SHCONFIG_EDITOR /etc/hosts"
 alias config-boot="$SHCONFIG_EDITOR $SHCONFIG_PATH/boot.zsh"
 alias config-env="$SHCONFIG_EDITOR $SHCONFIG_PATH/env.zsh"
 alias config-sensitive="$SHCONFIG_EDITOR $SHCONFIG_PATH/sensitive.zsh"
