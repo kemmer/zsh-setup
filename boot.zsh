@@ -9,4 +9,4 @@ source $SHCONFIG_PATH/alias.zsh
 source $SHCONFIG_PATH/functions.zsh
 
 # -- Exec at startup
-(neofetch && echo "\n\n\n" && quote)
+(neofetch && echo "\n\n" && quote)

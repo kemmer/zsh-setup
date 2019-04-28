@@ -26,7 +26,7 @@ function dict()
     fi
 
     logstore "$1" dict.log
-    xdg-open https://en.oxforddictionaries.com/definition/$1
+    xdg-open https://en.oxforddictionaries.com/definition/$1 &
 }
 
 function thesau()
@@ -37,7 +37,7 @@ function thesau()
     fi
 
     logstore "$1" thesau.log
-    xdg-open https://www.thesaurus.com/browse/$1
+    xdg-open https://www.thesaurus.com/browse/$1 &
 }
 
 function gpdict()
@@ -48,7 +48,7 @@ function gpdict()
     fi
 
     logstore "$1" gpdict.log
-    xdg-open https://dict.leo.org/alemão-português/$1
+    xdg-open https://dict.leo.org/alemão-português/$1 &
 }
 
 function homestead()
