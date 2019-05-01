@@ -22,4 +22,4 @@ Framework-like structure for organizing different shell configurations. Optimize
 ```git neofetch bat trash-cli```
 
 ### Required plugins (from Oh My Zsh)
-```git quote copyfile ```
+```git rand-quote copyfile ```
