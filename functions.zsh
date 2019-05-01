@@ -55,3 +55,26 @@ function homestead()
 {
     (cd $HOME/Personal/Homestead && vagrant $*)
 }
+
+function shortcut()
+{
+    if [[ ! $1 ]]; then
+        echo "shortcut: Please provide one file to create a shortcut on the Desktop"
+        return 1
+    fi
+
+    shortcut_name="$1"
+    if [[ $2 ]]; then
+        shortcut_name="$2"
+        echo $shortcut_name
+    fi
+
+    filepath=$(readlink -f "$1")
+    ln -s $filepath $HOME/Desktop/$shortcut_name
+
+    if [[ $? != 0 ]]; then
+        return 1
+    fi
+
+    echo "Shortcut created: $(basename $filepath) -> $shortcut_name"
+}
