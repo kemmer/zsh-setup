@@ -12,7 +12,12 @@ alias config-functions="$SHCONFIG_EDITOR $SHCONFIG_PATH/functions.zsh"
 alias config-homestead="$SHCONFIG_EDITOR $HOME/Personal/Homestead/Homestead.yaml"
 
 # Remapped commands
-alias ls="ls -l --color"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+	alias ls="ls -l -G"
+elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+	alias ls="ls -l --color"
+fi
+
 alias mv="mv -i"
 alias cat="bat --plain --theme 1337"
 alias rcat="/bin/cat"
