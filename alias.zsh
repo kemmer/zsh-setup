@@ -35,3 +35,4 @@ alias evpnd="expressvpn disconnect"
 # trash-cli (Ubuntu)
 alias tf="trash"
 alias tl="trash-list"
+alias gpl="gp --force-with-lease"
