@@ -1,3 +1,16 @@
+# For changing sensitive configuration files (prefixed with sensitive-)
+function config-sensitive()
+{
+    filepath="$SHCONFIG_PATH/sensitive-$1.zsh"
+
+    if [[ ! -f $filepath ]]; then
+        echo "config-sensitive: The sensitive configuration file requested does not exist."
+        return 1
+    fi
+
+    $SHCONFIG_EDITOR $filepath
+}
+
 # For info about EXIT STATUS: man man
 
 function logstore()
