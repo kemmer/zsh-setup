@@ -16,6 +16,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias ls="ls -l -G"
 elif [[ "$OSTYPE" == "linux-gnu" ]]; then
 	alias ls="ls -l --color"
+        alias lsh="ls -h"
 fi
 
 alias mv="mv -i"
