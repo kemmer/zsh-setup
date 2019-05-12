@@ -46,6 +46,23 @@ function fcount()
     find "$1" -name "*.${extension}" | xargs wc -l | sort
 }
 
+# Takes the md5sum of all files in a given directory (recursively)
+# and creates a file with them
+# Useful for comparing directories, having done for both of then and
+# comparing the text file with the hashes
+# https://askubuntu.com/questions/421712/comparing-the-contents-of-two-directories
+function md5dir()
+{
+    if [[ ! $1 ]]; then
+        echo "md5dir: Please provide the folder path"
+        return 1
+    fi
+
+    dirname=$(basename $(readlink -f $1))
+
+    find $1 -type f -exec md5sum {} + | sort -k 2 > ./${dirname}-md5sum-$(date +%Y-%m-%d_%H-%M).txt
+}
+
 # Dictionaries
 function dict()
 {
