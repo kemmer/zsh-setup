@@ -71,7 +71,8 @@ function md5dir()
         return 1
     fi
 
-    dirname=$(basename $(readlink -f $1))
+    nospacesname=$(echo "$1" | sed -e 's/\s\+//g')
+    dirname=$(basename $(readlink -f $nospacesname))
 
     find $1 -type f -exec md5sum {} + | sort -k 2 > ./${dirname}-md5sum-$(date +%Y-%m-%d_%H-%M).txt
 }
