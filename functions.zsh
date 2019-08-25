@@ -1,7 +1,10 @@
 # For changing sensitive configuration files (prefixed with sensitive-)
 config-sensitive()
 {
-    filepath="$SHCONFIG_PATH/sensitive-$1.zsh"
+    suffix=""
+    [ ! -z "$1" ] && suffix="-$1"
+
+    filepath="$SHCONFIG_PATH/sensitive${suffix}.zsh"
 
     if [[ ! -f $filepath ]]; then
         echo "config-sensitive: The sensitive configuration file requested does not exist."
