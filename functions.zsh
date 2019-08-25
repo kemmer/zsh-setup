@@ -69,24 +69,6 @@ fcount()
     find "$1" -name "*.${extension}" | xargs wc -l | sort
 }
 
-# Takes the md5sum of all files in a given directory (recursively)
-# and creates a file with them
-# Useful for comparing directories, having done for both of then and
-# comparing the text file with the hashes
-# https://askubuntu.com/questions/421712/comparing-the-contents-of-two-directories
-function md5dir()
-{
-    if [[ ! $1 ]]; then
-        echo "md5dir: Please provide the folder path"
-        return 1
-    fi
-
-    nospacesname=$(echo "$1" | sed -e 's/\s\+//g')
-    dirname=$(basename $(readlink -f $nospacesname))
-
-    find $1 -type f -exec md5sum {} + | sort -k 2 > ./${dirname}-md5sum-$(date +%Y-%m-%d_%H-%M).txt
-}
-
 # Dictionaries
 dict()
 {
@@ -121,30 +103,24 @@ gpdict()
     open https://dict.leo.org/alemão-português/$1 &
 }
 
-function homestead()
+# Executes a command multiple times
+loopexec()
 {
-    (cd $HOME/Personal/Homestead && vagrant $*)
+    TIMES="$1"
+    shift; COMMAND="$@"
+
+    for ((n=1; n <= $TIMES; n++))
+    do
+        ${COMMAND}
+    done
 }
 
-function shortcut()
-{
-    if [[ ! $1 ]]; then
-        echo "shortcut: Please provide one file to create a shortcut on the Desktop"
-        return 1
-    fi
+# Executes a command multiple times using GNU Parallel (more performatic)
+#loopexecp()
+#{
+#    TIMES="$1"
+#    shift; COMMAND="$@"
+#
+#    parallel -N0 -j12 ${COMMAND} ::: {1..${TIMES}}
+#}
 
-    shortcut_name="$1"
-    if [[ $2 ]]; then
-        shortcut_name="$2"
-        echo $shortcut_name
-    fi
-
-    filepath=$(readlink -f "$1")
-    ln -s $filepath $HOME/Desktop/$shortcut_name
-
-    if [[ $? != 0 ]]; then
-        return 1
-    fi
-
-    echo "Shortcut created: $(basename $filepath) -> $shortcut_name"
-}

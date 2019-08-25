@@ -8,35 +8,50 @@ alias config-env="$EDITOR $SHCONFIG_PATH/env.zsh"
 alias config-alias="$EDITOR $SHCONFIG_PATH/alias.zsh"
 alias config-functions="$EDITOR $SHCONFIG_PATH/functions.zsh"
 
-alias config-homestead="$SHCONFIG_EDITOR $HOME/Personal/Homestead/Homestead.yaml"
+alias config-vim="$EDITOR $HOME/.vimrc"
+alias config-task="$EDITOR $HOME/.taskrc"
+alias config-neofetch="$EDITOR $HOME/.config/neofetch/config.conf"
 
-# Remapped commands
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	alias ls="ls -l -G"
-elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-	alias ls="ls -l --color"
-        alias lsh="ls -h"
-fi
-
+# Basic unix tools
+alias h='cd $HOME'
+alias l='/bin/ls'
+alias ls="ls -l -G"
+alias cp="cp -v -i"
 alias mv="mv -i"
-alias cat="bat --plain --theme 1337"
+alias cat="bat --plain"
 alias rcat="/bin/cat"
 
-# Additional alias for `debian` oh-my-zsh plugin
-alias ali="grep \" install \" /var/log/dpkg.log"    # List installed packages
-alias ass="apt show"
-
-# Express VPN
-alias evpn="expressvpn"
-alias evpns="expressvpn status"
-alias evpnc="expressvpn connect"
-alias evpnd="expressvpn disconnect"
-
-# trash-cli (Ubuntu)
-alias tf="trash"
-alias tl="trash-list"
-
-alias gpl="gp --force-with-lease"
-
 alias sshgen="ssh-keygen -t rsa -b 2048 -m pem"
+
+# Common git operations for my workflow
+alias gwip="git commit --no-verify -a -m WIP"
+#alias gdip="git reset HEAD~1 --soft"
+
+# Vagrant
+alias vs="vagrant status"
+alias vss="vagrant ssh"
+alias vu="vagrant up"
+alias vh="vagrant halt"
+alias vr="vagrant reload"
+
+# PHP
+alias pdocm="bin/console doctrine:migrations:diff --formatted --line-length=120"
+
+# kube-ps1 extension
+alias kn="kubeon"
+alias kf="kubeoff"
+
+# Kubernetes management and useful commands
+alias kls="kubectl get pods"
+
+# Docker
+#alias dps="docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
+alias dls="dps"
+#alias dpsw="watch -n 0.5 docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.RunningFor}}\t{{.Status}}\t{{.Ports}}'"
+
+# Python
+# -- VirtualEnv
+alias venv='. venv/bin/activate'
+alias denv='deactivate'
 
