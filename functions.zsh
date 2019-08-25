@@ -96,7 +96,7 @@ dict()
     fi
 
     logstore "$1" dict.log
-    xdg-open https://en.oxforddictionaries.com/definition/$1 &
+    open https://en.oxforddictionaries.com/definition/$1 &
 }
 
 thesau()
@@ -107,7 +107,7 @@ thesau()
     fi
 
     logstore "$1" thesau.log
-    xdg-open https://www.thesaurus.com/browse/$1 &
+    open https://www.thesaurus.com/browse/$1 &
 }
 
 gpdict()
@@ -118,7 +118,7 @@ gpdict()
     fi
 
     logstore "$1" gpdict.log
-    xdg-open https://dict.leo.org/alemão-português/$1 &
+    open https://dict.leo.org/alemão-português/$1 &
 }
 
 function homestead()
