@@ -23,6 +23,9 @@ alias rcat="/bin/cat"
 
 alias sshgen="ssh-keygen -t rsa -b 2048 -m pem"
 
+# -- Allows to edit the next command in the $EDITOR
+alias edi='edit-command-line'
+
 # Common git operations for my workflow
 alias gwip="git commit --no-verify -a -m WIP"
 #alias gdip="git reset HEAD~1 --soft"
