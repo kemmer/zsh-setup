@@ -8,7 +8,7 @@ function config-sensitive()
         return 1
     fi
 
-    $SHCONFIG_EDITOR $filepath
+    $EDITOR $filepath
 }
 
 # For info about EXIT STATUS: man man
