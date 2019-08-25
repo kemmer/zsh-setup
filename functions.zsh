@@ -1,5 +1,5 @@
 # For changing sensitive configuration files (prefixed with sensitive-)
-function config-sensitive()
+config-sensitive()
 {
     filepath="$SHCONFIG_PATH/sensitive-$1.zsh"
 
@@ -13,7 +13,7 @@ function config-sensitive()
 
 # For info about EXIT STATUS: man man
 
-function logstore()
+logstore()
 {
     target_path="$SHSTORAGE_PATH/all.log"
     if [[ $2 ]]; then
@@ -23,7 +23,7 @@ function logstore()
     echo "$1" >> $target_path
 }
 
-function loglist()
+loglist()
 {
     target_path="$SHSTORAGE_PATH/all.log"
     if [[ $1 ]]; then
@@ -34,17 +34,27 @@ function loglist()
 }
 
 # File search functions
-function f() { find . -iname "*$1*" ${@:2} }
-function r() { grep "$1" ${@:2} -R . }
+f()
+{
+    find . -iname "*$1*" ${@:2}
+}
+
+r()
+{
+    grep "$1" ${@:2} -R .
+}
 
 # Create a folder and move into it in one command
-function mkcd() { mkdir -p "$@" && cd "$_"; }
+mkcd()
+{
+    mkdir -p "$@" && cd "$_";
+}
 
 # Find out number of lines per file and order them
 # References:
 # https://stackoverflow.com/questions/1358540/how-to-count-all-the-lines-of-code-in-a-directory-recursively
 # https://unix.stackexchange.com/questions/260630/how-do-you-list-number-of-lines-of-every-file-in-a-directory-in-human-readable-f
-function fcount()
+fcount()
 {
     if [[ ! $1 ]]; then
         echo "fcount: Please provide the folder path"
@@ -78,7 +88,7 @@ function md5dir()
 }
 
 # Dictionaries
-function dict()
+dict()
 {
     if [[ ! $1 ]]; then
         echo "dict: Please provide at least one english word"
@@ -89,7 +99,7 @@ function dict()
     xdg-open https://en.oxforddictionaries.com/definition/$1 &
 }
 
-function thesau()
+thesau()
 {
     if [[ ! $1 ]]; then
         echo "thesau: Please provide at least one english word"
@@ -100,7 +110,7 @@ function thesau()
     xdg-open https://www.thesaurus.com/browse/$1 &
 }
 
-function gpdict()
+gpdict()
 {
     if [[ ! $1 ]]; then
         echo "gdict: Please provide at least one german or portuguese word"
