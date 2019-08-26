@@ -37,7 +37,7 @@ RPS1='$(kube_ps1) $EPS1'
 export LC_ALL='en_US.UTF-8'
 
 # phpbrew
-# source $HOME/.phpbrew/bashrc
+[ -e $HOME/.phpbrew/bashrc ] && source $HOME/.phpbrew/bashrc
 
 # Completions
 source <(kubectl completion zsh)
