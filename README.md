@@ -1,3 +1,5 @@
+> THIS PROJECT IS DEPRECATED
+
 # zsh-setup
 Framework-like structure for organizing different shell configurations. Optimized for ZSH (with Oh My Zsh framework).
 
